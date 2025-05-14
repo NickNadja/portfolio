@@ -1,4 +1,5 @@
-function opentab(tabname) {
+// Fonction pour les onglets
+function opentab(tabname, event) {
   const tablinks = document.getElementsByClassName('tab-links');
   const tabcontents = document.getElementsByClassName('tab-contents');
   
@@ -14,9 +15,10 @@ function opentab(tabname) {
   document.getElementById(tabname).classList.add('active-tab');
 }
 
+// Initialisation de la traduction Google
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
-    pageLanguage: 'en',
+    pageLanguage: 'fr', // Changé à 'fr' comme langue par défaut
     includedLanguages: 'en,fr,mg',
     layout: google.translate.TranslateElement.InlineLayout.SIMPLE
   }, 'google_translate_element');
@@ -30,11 +32,28 @@ function googleTranslateElementInit() {
   }, 1000);
 }
 
+// Menu Burger
+function toggleMenu() {
+  const nav = document.querySelector('nav ul');
+  const icon = document.querySelector('.burger-menu i');
+  
+  nav.classList.toggle('show');
+  
+  if (nav.classList.contains('show')) {
+    icon.classList.remove('fa-bars');
+    icon.classList.add('fa-times');
+  } else {
+    icon.classList.remove('fa-times');
+    icon.classList.add('fa-bars');
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  // Animation de texte
   const typingText = document.getElementById('typing-text');
   const texts = [
-    "Hello, Welcome to my portfolio",
     "Bonjour, Bienvenue sur mon portfolio",
+    "Hello, Welcome to my portfolio",
     "Miarahaba, Tongasoa eto amin'ny portfolio-ko"
   ];
   let currentText = 0;
@@ -69,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setTimeout(type, 1000);
 
+  // Disparition de l'intro
   setTimeout(() => {
     document.querySelector('.intro-overlay').style.opacity = '0';
     setTimeout(() => {
@@ -76,6 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 500);
   }, 6000);
 
+  // Animation au scroll
   const sections = document.querySelectorAll('#about, #services, #portfolio, #contact');
 
   function checkScroll() {
@@ -92,12 +113,38 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', checkScroll);
   checkScroll();
 
+  // Navigation fluide
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
+      
+      // Fermer le menu burger si ouvert
+      const nav = document.querySelector('nav ul');
+      if (nav.classList.contains('show')) {
+        nav.classList.remove('show');
+        const icon = document.querySelector('.burger-menu i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+      
       document.querySelector(this.getAttribute('href')).scrollIntoView({
         behavior: 'smooth'
       });
+    });
+  });
+
+  // Gestion du menu burger
+  const burgerMenu = document.querySelector('.burger-menu');
+  if (burgerMenu) {
+    burgerMenu.addEventListener('click', toggleMenu);
+  }
+
+  // Correction des onglets pour passer l'événement
+  const tabLinks = document.querySelectorAll('.tab-links');
+  tabLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const tabname = link.getAttribute('onclick').match(/'(.*?)'/)[1];
+      opentab(tabname, e);
     });
   });
 });

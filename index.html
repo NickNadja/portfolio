@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nadja - Web Developer</title>
+  <title>Nadja - Développeur Web</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="animation.css">
@@ -26,23 +26,26 @@
   <div id="header" class="content">
     <div class="container">
       <nav>
+        <div class="burger-menu" id="burgerMenu">
+          <i class="fas fa-bars"></i>
+        </div>
         <div id="google_translate_element" class="language-selector"></div>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#about">À propos</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Projects</a></li>
+          <li><a href="#portfolio">Projets</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
       <div class="header-text">
         <div class="header-content">
-          <p>WEB Developer</p>
-          <h1>Hi, I'm <span>Nadja</span><br>from Madagascar</h1>
+          <p>Développeur WEB</p>
+          <h1>Bonjour, je suis <span>Nadja</span><br>de Madagascar</h1>
         </div>
         <div class="header-actions">
           <a href="#" class="btn">
-            <span class="btn-text">Download CV</span> <i class="fas fa-download"></i>
+            <span class="btn-text">Télécharger CV</span> <i class="fas fa-download"></i>
           </a>
         </div>
       </div>
@@ -56,13 +59,12 @@
           <img src="images/FB_IMG_17252937227038042.jpg" alt="Profile">
         </div>
         <div class="about-col-2">
-          <h1 class="sub-title">About Me</h1>
-          <p>Full-stack developer specializing in web and desktop application development. With expertise in both front-end and back-end technologies, I build high-performance solutions using JavaScript, React, Node.js, python and Java frameworks.</p>
-          
+          <h1 class="sub-title">À propos de moi</h1>
+          <p>Développeur full-stack spécialisé dans le développement d'applications web et desktop. Avec une expertise dans les technologies front-end et back-end, je construis des solutions performantes utilisant JavaScript, React, Node.js, Python et les frameworks Java.</p>          
           <div class="tab-titles">
-            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-            <p class="tab-links" onclick="opentab('experience')">Experience</p>
-            <p class="tab-links" onclick="opentab('education')">Education</p>
+            <p class="tab-links active-link" onclick="opentab('skills')">Compétences</p>
+            <p class="tab-links" onclick="opentab('experience')">Expérience</p>
+            <p class="tab-links" onclick="opentab('education')">Formation</p>
           </div>
           
           <div class="tab-contents active-tab" id="skills">
@@ -131,7 +133,7 @@
               <li>
                 <div class="exp-header">
                   <span class="exp-year">L1</span>
-                  <p class="exp-title">Burger Ordering Application Development</p>
+                  <p class="exp-title">Développement d'application de commande de burgers</p>
                 </div>
                 <p class="exp-tech">(HTML, CSS, JavaScript)</p>
                 <div class="tech-icons">
@@ -142,14 +144,14 @@
               </li>
               <li>
                 <span>L2</span>
-                <p class="exp-title">Shoe Inventory Management System</p>
+                <p class="exp-title">Système de gestion de stock de chaussures</p>
                 <div class="tech-icons">
                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" width="20">
                 </div>
               </li>
               <li>
                 <span>2024</span>
-                <p class="exp-title">Ministry of Finance & Foreign Affairs - Development Internship</p>
+                <p class="exp-title">Ministère des Finances & Affaires Étrangères - Stage en développement</p>
                 <div class="tech-icons">
                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="20">
                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width="20">
@@ -199,22 +201,22 @@
   </div>
   <div id="services">
     <div class="container">
-      <h1 class="sub-title">My Services</h1>
+      <h1 class="sub-title">Mes Services</h1>
       <div class="services-list">
         <div>
           <i class="fas fa-code"></i>
-          <h2>Web Development</h2>
-          <p>Building responsive and scalable web applications using modern technologies.</p>
+          <h2>Développement Web</h2>
+          <p>Création d'applications web réactives et évolutives utilisant des technologies modernes.</p>
         </div>
         <div>
           <i class="fas fa-desktop"></i>
-          <h2>Desktop Development</h2>
-          <p>Building high-performance Windows/macOS applications using Java, C#.</p>
+          <h2>Développement Desktop</h2>
+          <p>Création d'applications hautes performances pour Windows/macOS utilisant Java, C#.</p>
         </div>
         <div>
           <i class="fas fa-mobile-alt"></i>
-          <h2>App Development</h2>
-          <p>Developing cross-platform mobile applications for iOS and Android.</p>
+          <h2>Développement Mobile</h2>
+          <p>Développement d'applications mobiles multiplateformes pour iOS et Android.</p>
         </div>
       </div>
     </div>
@@ -222,34 +224,34 @@
 
   <div id="portfolio">
     <div class="container">
-      <h1 class="sub-title">My Work</h1>
+      <h1 class="sub-title">Mes Projets</h1>
       <div class="work-list">
         <div class="work">
           <img src="images/tr.png" alt="E-Commerce App">
           <div class="layer">
-            <h3>E-Commerce Platform</h3>
-            <p>Full-featured online shopping system with payment gateway integration. Developed with Spring Boot backend and Angular 19 frontend.</p>
+            <h3>Plateforme E-Commerce</h3>
+            <p>Système de shopping en ligne complet avec intégration de passerelle de paiement. Développé avec Spring Boot en backend et Angular 19 en frontend.</p>
             <a href="https://github.com/NickNadja"><i class="fas fa-external-link-alt"></i></a>
           </div>
         </div>
         <div class="work">
           <img src="images/secours.png" alt="Social Media App">
           <div class="layer">
-            <h3>Emergency Mortality Assistance System</h3>
-            <p>Government ministry solution for death case management with automated calculations. Built with React, Node.js, and MySQL.</p>
+            <h3>Système d'Assistance Mortuaire d'Urgence</h3>
+            <p>Solution ministérielle pour la gestion des cas de décès avec calculs automatisés. Construit avec React, Node.js et MySQL.</p>
             <a href="https://github.com/NickNadja"><i class="fas fa-external-link-alt"></i></a>
           </div>
         </div>
         <div class="work">
           <img src="images/gestionvente.png" alt="Portfolio Website">
           <div class="layer">
-            <h3>Clothing Retail Management System</h3>
-            <p>Comprehensive inventory and sales management solution for clothing retailers. Developed with Spring Boot framework.</p>
+            <h3>Système de Gestion pour Magasin de Vêtements</h3>
+            <p>Solution complète de gestion d'inventaire et de ventes pour détaillants en habillement. Développé avec le framework Spring Boot.</p>
             <a href="https://github.com/NickNadja"><i class="fas fa-external-link-alt"></i></a>
           </div>
         </div>
       </div>
-      <a href="https://github.com/NickNadja" class="btn">See more</a>
+      <a href="https://github.com/NickNadja" class="btn">Voir plus</a>
     </div>
   </div>
 
@@ -257,7 +259,7 @@
     <div class="container">
         <div class="row">
             <div class="contact-left">
-                <h1 class="sub-title">Contact Me</h1>
+                <h1 class="sub-title">Contactez-moi</h1>
                 <p><i class="fas fa-paper-plane"></i>nadjanick3@gmail.com</p>
                 <p><i class="fas fa-phone"></i>0346876630</p>
                 <div class="social-icons">
@@ -269,16 +271,15 @@
             </div>
             <div class="contact-right">
                 <form action="https://formspree.io/f/xpwdrgvk" method="POST">
-                    <input type="text" name="Name" placeholder="Your name here" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="Name" placeholder="Votre nom ici" required>
+                    <input type="email" name="email" placeholder="Votre Email" required>
                     <textarea name="Message" placeholder="Message" required></textarea>
-                    <button type="submit" class="submit-btn">Send</button>
+                    <button type="submit" class="submit-btn">Envoyer</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
 
   <script src="script.js"></script>
 </body>
