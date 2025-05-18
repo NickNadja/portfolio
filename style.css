@@ -170,10 +170,8 @@ nav ul li a:hover::after {
 
 .btn {
   display: inline-flex;
-  padding: 12px 28px;
   background: transparent;
   color: #fff;
-  border: none;
   border-radius: 5px;
   font-size: 18px;
   font-weight: 500;
@@ -181,13 +179,22 @@ nav ul li a:hover::after {
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
+
   position: relative;
   overflow: hidden;
   z-index: 1;
   white-space: nowrap;
   min-height: 44px;
   min-width: 44px;
+  margin: 50px auto;
+  width: fit-content;
+  border: 1px solid #ff004f;
+  padding: 14px 50px;
+  transition: background 0.5s;
+}
+
+.btn:hover {
+  background: #ff004f;
 }
 
 .btn i {
@@ -502,21 +509,7 @@ nav ul li a:hover::after {
   height: 100%;
 }
 
-.btn {
-  display: block;
-  margin: 50px auto;
-  width: fit-content;
-  border: 1px solid #ff004f;
-  padding: 14px 50px;
-  border-radius: 6px;
-  text-decoration: none;
-  color: #fff;
-  transition: background 0.5s;
-}
 
-.btn:hover {
-  background: #ff004f;
-}
 
 /* Contact */
 .contact-left {
@@ -883,7 +876,7 @@ a, button, .btn, .submit-btn {
     border-radius: 50%;
     border: 2px solid #ff004f;
     object-fit: cover;
-    margin-left: 300px;
+    margin-left: 150px;
   }
   
   .about-col-2 {

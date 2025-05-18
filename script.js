@@ -52,14 +52,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Animation de texte
   const typingText = document.getElementById('typing-text');
   const texts = [
-    "Bonjour, Bienvenue sur mon portfolio",
-    "Hello, Welcome to my portfolio",
-    "Miarahaba, Tongasoa eto amin'ny portfolio-ko"
+    "Bonjour, Bienvenue",
   ];
   let currentText = 0;
   let index = 0;
   let isDeleting = false;
   let speed = 100;
+  let isTypingStarted = false; // Protection contre double exécution
 
   function type() {
     const currentString = texts[currentText];
@@ -76,17 +75,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!isDeleting && index === currentString.length) {
       isDeleting = true;
-      speed = 1500;
+      speed = 1000;
     } else if (isDeleting && index === 0) {
       isDeleting = false;
       currentText = (currentText + 1) % texts.length;
-      speed = 500;
+      speed = 1000; // Augmenté de 300ms à 1000ms pour une pause plus claire
     }
 
     setTimeout(type, speed);
   }
 
-  setTimeout(type, 1000);
+  // Protection contre double exécution
+  if (!isTypingStarted) {
+    isTypingStarted = true;
+    setTimeout(type, 1000);
+  }
 
   // Disparition de l'intro
   setTimeout(() => {
@@ -94,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       document.querySelector('.intro-overlay').style.display = 'none';
     }, 500);
-  }, 6000);
+  }, 5000);
 
   // Animation au scroll
   const sections = document.querySelectorAll('#about, #services, #portfolio, #contact');
